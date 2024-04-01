@@ -8,9 +8,9 @@ export const createTodo = async (title: string) => {
             throw new Error('Todo not created.');
         }
 
-        return todo;
+        return { todo };
     } catch (error) {
-        return error;
+        return { error };
     }
 };
 
@@ -22,8 +22,22 @@ export const getTodos = async () => {
             throw new Error('No todos found...');
         }
 
-        return todos;
+        return { todos };
     } catch (error) {
-        return error;
+        return { error };
+    }
+};
+
+export const updateTodo = async (id: string, isCompleted: boolean) => {
+    try {
+        const todo = await db.todo.update({ where: { id }, data: { isCompleted } });
+
+        if (!todo) {
+            throw new Error('Todo is not updated.');
+        }
+
+        return { todo };
+    } catch (error) {
+        return { error };
     }
 };
