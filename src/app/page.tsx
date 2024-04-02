@@ -2,6 +2,8 @@ import { getTodos } from '../../lib/todos';
 import TodoForm from './components/TodoForm';
 import TodoItem from './components/TodoItem';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
     const { todos } = await getTodos();
 
