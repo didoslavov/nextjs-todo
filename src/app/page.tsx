@@ -8,7 +8,8 @@ export default async function Home() {
     const { todos } = await getTodos();
 
     return (
-        <section className="flex items-center justify-center bg-teal-50 h-screen placeholder:bg-inherit">
+        <section className="flex flex-col items-center justify-center bg-teal-50 h-screen placeholder:bg-inherit">
+            <h1 className="font-extrabold text-6xl mb-12">Todos</h1>
             <div className="flex flex-col w-fit">
                 <TodoForm />
                 <article className="w-full">
