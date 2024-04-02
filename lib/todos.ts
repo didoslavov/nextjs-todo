@@ -41,3 +41,11 @@ export const updateTodo = async (id: string, isCompleted: boolean) => {
         return { error };
     }
 };
+
+export const deleteTodo = async (id: string) => {
+    try {
+        await db.todo.delete({ where: { id } });
+    } catch (error) {
+        return { error };
+    }
+};
